@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Check if Homebrew is installed, and install it if not
+if ! command -v brew &>/dev/null; then
+    echo "Homebrew not found, installing it..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="nvim,tmux,zsh"
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES="$HOME/.dotfiles"
+fi
+
+# Install everything from the Brewfile
+brew bundle --file="$DOTFILES/Brewfile"
