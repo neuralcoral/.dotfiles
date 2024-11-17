@@ -16,3 +16,4 @@ fi
 
 # Install everything from the Brewfile
 brew bundle --file="$DOTFILES/Brewfile"
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
