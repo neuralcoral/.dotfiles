@@ -104,5 +104,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
+source <(fzf --zsh)
+alias cd="z"
+
 clear;
 neofetch;
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"

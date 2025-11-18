@@ -25,8 +25,8 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     bash -c "$(curl -fsSL https://install.ohmyz.sh/)"
 fi
 
-git clone https://github.com/powerline/fonts.git --depth=1
-pushd fonts
-./install.sh
-popd
-rm -rf fonts
+if [ ! -d "$HOME/.atuin" ]; then
+    echo "Atuin not found, installing it..."
+    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+fi
+
